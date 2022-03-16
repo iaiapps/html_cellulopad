@@ -1,0 +1,26 @@
+untuk sel hewan
+A. Membran sel
+B. Sitoskeleton
+C. Sitoplasma
+D. Ribosom
+E. Inti Sel
+F. RE
+G. Sentriol
+H. Mitokondria
+I. Lisosom
+J. Badan Golgi
+
+untuk sel tumbuhan
+A. Dinding Sel
+B. Ribosom
+C. Membran sel
+D. Inti Sel
+E. Amiloplas
+F. RE
+G. Vakuola
+H. Mitokondria
+I. Sitoplasma
+J. Sitoskeleton
+K. Badan Golgi
+L. Peroksisom
+M. Kloroplas

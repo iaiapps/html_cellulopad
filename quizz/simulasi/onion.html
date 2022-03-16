@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/spectre.min.css" />
+    <link rel="stylesheet" href="../../css/app.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Project lomba</title>
+  </head>
+
+  <body class="bg-secondary">
+    <div id="app" class="color-red">
+      <div class="headerpage">
+        <div class="boxheader">
+          <a
+            href="simulasi.html"
+            class="backarrow"
+            data-ripplet="color: #fe5e49;"
+          >
+            <img src="../../img/back.svg" alt="back" width="30px" />
+          </a>
+          <h4 class="text-bold pl-2">Jenis Sel</h4>
+        </div>
+
+        <div class="boxmateri">
+          <div class="materi">
+            <h5>Preparat Perbesaran jaringan tumbuhan (jaringan bawang)</h5>
+            <br />
+            <div id="container" class="map touch-auto dragscroll">
+              <img id="box" src="img/eukaryotic.png" width="300" />
+            </div>
+            <br />
+            <p>drag untuk memindahkan tampilan preparat</p>
+            <button class="btn btn-error" onclick="reset(1)">reset</button>
+            <br /><br />
+            <span>Perbesaran</span>
+            <button class="btn btn-primary" onclick="zoom(2)">2x</button>
+            <button class="btn btn-primary" onclick="zoom(5)">5x</button>
+            <button class="btn btn-primary" onclick="zoom(10)">10x</button>
+            
+            <br /><br />
+            <a class="btn" href="simulasi.html">kembali</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main bg-secondary"></div>
+    </div>
+
+    <script src="js/dragscroll.js"></script>
+    <script>
+      let img = document.getElementById("box");
+      let container = document.getElementById("container");
+
+      function reset() {
+        container.scrollTo(0, 0);
+        img.width = 310;
+
+        // img.style.transform = "scale(1)";
+      }
+      function zoom(ev) {
+        lebar = ev * 300;
+        img.width = lebar;
+
+        // img.style.transform = " scale(" + ev + ")";
+        if ((lebar = 300)) {
+          container.scrollTo(150, 150);
+        } else {
+          container.scrollTo(lebar / 2, lebar / 2);
+        }
+      }
+    </script>
+  </body>
+</html>

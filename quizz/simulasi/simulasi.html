@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/spectre.min.css" />
+    <link rel="stylesheet" href="../../css/app.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Project lomba</title>
+  </head>
+
+  <body class="bg-secondary">
+    <div id="app" class="color-red">
+      <div class="headerpage">
+        <div class="boxheader">
+          <a
+            href="../../quizz.html"
+            class="backarrow"
+            data-ripplet="color: #fe5e49;"
+          >
+            <img src="../../img/back.svg" alt="back" width="30px" />
+          </a>
+          <h4 class="text-bold pl-2">Jenis Sel</h4>
+        </div>
+
+        <div class="boxmateri">
+          <div class="materi">
+            <div class="judul">
+              <h4>Simulasi mikroskop</h4>
+              <h5>
+                Pilih salah satu jaringan yang akan diamati, taruh spesimen
+                dipreparat (kotak merah), kemudian aktifkan pemutar mikroskop
+              </h5>
+            </div>
+
+            <div id="jaringan" class="jaringan">
+              <div id="meat" class="title">
+                <img id="gbr-meat" src="img/meat.svg" alt="meat" />
+                <p>jaringan epitel</p>
+              </div>
+
+              <div id="onion" class="title">
+                <img id="gbr-onion" src="img/onion.svg" alt="onion" />
+                <p>jaringan tumbuhan</p>
+              </div>
+            </div>
+            <div id="mikroskop">
+              <img
+                id="recovery"
+                src="img/recovery.svg"
+                alt="recovery"
+                onclick="gotolink()"
+              />
+              <img
+                id="gbr-mikroskop"
+                src="img/microscope.svg"
+                alt="mikroskop"
+              />
+              <div id="preparat"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main bg-secondary"></div>
+    </div>
+
+    <script src="js/Sortable.min.js"></script>
+
+    <script>
+      //let jaringan = document.getElementById("jaringan");
+      let meat = document.getElementById("meat");
+      let onion = document.getElementById("onion");
+
+      let preparat = document.getElementById("preparat");
+
+      new Sortable(meat, {
+        animation: 150,
+        group: "shared",
+      });
+      new Sortable(onion, {
+        animation: 150,
+        group: "shared",
+      });
+      new Sortable(preparat, {
+        animation: 150,
+        group: "shared",
+        ghostClass: "blue-background-class",
+      });
+
+      function gotolink() {
+        let data = document.getElementById("preparat").lastChild.id;
+        //console.log(data);
+        if (data == "gbr-onion") {
+          window.location.href = "onion.html";
+        } else if (data == "gbr-meat") {
+          // window.location.href = "meat.html";
+          window.location.href = "meat.html";
+        } else {
+          console.log("anda belum drag");
+        }
+      }
+    </script>
+  </body>
+</html>
